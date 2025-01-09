@@ -9,10 +9,6 @@ def hitung_luas (alas, tinggi):
 
 """kalau fungsional, kita sendiri yang mengelola
 hasil kembaliannya"""
-
-# satu fungsi bisa dipanggil secara independen
 print(hitung_luas(5, 10))
-
-# contoh dengan inputan alas dan tinggi
 alas, tinggi = input_alas_dan_tinggi()
 print(hitung_luas(alas, tinggi))
