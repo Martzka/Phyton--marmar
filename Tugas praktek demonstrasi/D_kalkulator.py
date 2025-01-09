@@ -1,36 +1,37 @@
-def sapa(): #sapaan
-    print("Selamat datang di program kalkulator sederhana!")
+def sapa():
+    print("Welcome to program kalkulator")
 
-def tambah(a, b):   #Tambah
+def tambah(a, b):
     return a + b
-def kurang(a, b):   #Pengurangan
+
+def kurang(a, b):
     return a - b
-def kali(a, b):     #Perkalian
+
+def kali(a, b):
     return a * b
-def bagi(a, b):     #Pembagian
+
+def bagi(a, b):
     if b != 0:
         return a / b
     else:
         return "Kesalahan: Tidak bisa membagi dengan nol!"
 
-
 def main():
-    sapa()
+    sapa()  
+    results = [] 
     
     try:
         angka1 = float(input("Masukkan angka pertama: "))
         angka2 = float(input("Masukkan angka kedua: "))
     except ValueError:
-        print("Input harus berupa angka!")
+        print("Input harus berupa angka!") 
         return
-
     print("\nPilih operasi:")
     print("1. Tambah")
     print("2. Kurang")
     print("3. Kali")
     print("4. Bagi")
     pilihan = input("Masukkan pilihan (1/2/3/4): ")
-
     if pilihan == "1":
         hasil = tambah(angka1, angka2)
         operasi = "penjumlahan"
@@ -47,7 +48,12 @@ def main():
         print("Pilihan tidak valid!")
         return
 
-    print(f"\nHasil {operasi} dari {angka1} dan {angka2} adalah: {hasil}")
-
+    results.append((operasi, angka1, angka2, hasil))
+    print(f"Hasil operasi adalah: {hasil}")
+    print("---------------------------")
+    print("--- Hasil Semua Operasi ---")
+    for result in results:
+        print(f"{result[0].capitalize()} antara {result[1]} dan {result[2]}: {result[3]}")
+        
 if __name__ == "__main__":
     main()
