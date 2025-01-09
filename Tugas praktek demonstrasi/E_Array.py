@@ -4,7 +4,6 @@ def hitung_rata_rata(nilai):
     return sum(nilai) / len(nilai)
 
 def main():
-    
     try:
         jumlah = int(input("Masukkan nilai yang ingin dirata - ratakan: "))
     except ValueError:
@@ -14,7 +13,6 @@ def main():
     if jumlah <= 0:
         print("Jumlah nilai harus lebih besar dari 0!")
         return
-
     nilai = []
     for i in range(jumlah):
         try:
@@ -25,7 +23,6 @@ def main():
             return
 
     rata_rata = hitung_rata_rata(nilai)
-
     print("\nNilai yang Anda masukkan:")
     for i, n in enumerate(nilai, start=1):
         print(f"Nilai ke-{i}: {n}")
